@@ -1,0 +1,13 @@
+{
+  "name": "holidays-cli",
+  "version": "1.0.0",
+  "description": "holidays date in cli",
+  "main": "index.js",
+  "repository": "https://github.com/muhtarudinsiregar/holidays-cli.git",
+  "author": "muhtarudinsiregar93@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.15.3",
+    "cheerio": "^0.22.0"
+  }
+}
