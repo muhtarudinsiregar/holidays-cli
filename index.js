@@ -7,7 +7,6 @@ const inquirer = require('inquirer');
 const baseUrl = "http://www.liburnasional.com/kalender-2017/";
 
 var holidays = [];
-var years = []
 
 axios.get(baseUrl).then(res => {
     var $ = cheerio.load(res.data);
@@ -22,7 +21,8 @@ axios.get(baseUrl).then(res => {
     return holidays;
 }).then(holidays => {
     var currentYear = new Date().getFullYear(); //get current Year
-
+    var years       = [];
+    
     // get lists years, five years from current year
     for (var i = 0; i < 5; i++) {
         var temp = currentYear+i;
