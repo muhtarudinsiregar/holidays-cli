@@ -2,6 +2,7 @@
 
 const axios = require('axios');
 const cheerio = require('cheerio');
+const inquirer = require('inquirer');
 
 const baseUrl = "http://www.liburnasional.com/kalender-2017/";
 
