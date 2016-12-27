@@ -9,12 +9,13 @@ var holidays = [];
 
 axios.get(baseUrl).then(res => {
     var $ = cheerio.load(res.data);
-    // get datemont
-    // return [ { date: '1 Januari 2017', ... }],
-    $(".libnas-calendar-holiday-datemonth").each(function(x, y) {
+
+    $('.libnas-calendar-holiday-title').each(function(x, y) {
         holidays.push({
-            date: y.children[0].data
+            day     : y.children[1].children[0].data,
+            date    : y.children[2].children[0].data,
+            title   : y.children[0].children[0].children[0].children[0].data,
         });
-        return holidays;
     });
+    return holidays
 });
