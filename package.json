@@ -1,17 +1,23 @@
 {
-    "name": "holidays-cli",
-    "version": "1.0.0",
-    "description": "holidays date in cli",
-    "main": "index.js",
-    "repository": "https://github.com/muhtarudinsiregar/holidays-cli.git",
-    "author": "muhtarudinsiregar93@gmail.com",
-    "scripts": {
-        "start": "node index.js"
-    },
-    "license": "MIT",
-    "dependencies": {
-        "axios": "^0.15.3",
-        "cheerio": "^0.22.0",
-        "inquirer": "^2.0.0"
-    }
+  "name": "holidays-cli",
+  "version": "0.0.3",
+  "description": "holidays in cli",
+  "main": "index.js",
+  "repository": "https://github.com/muhtarudinsiregar/holidays-cli.git",
+  "author": "muhtarudinsiregar93@gmail.com",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.15.3",
+    "cheerio": "^0.22.0",
+    "inquirer": "^2.0.0"
+  },
+  "bin": {
+    "holidays-cli": "./index.js"
+  },
+  "devDependencies": {
+    "jshint": "^2.9.4"
+  }
 }
