@@ -1,6 +1,6 @@
 {
   "name": "holidays-cli",
-  "version": "0.0.3",
+  "version": "1.0.4",
   "description": "holidays in cli",
   "main": "index.js",
   "repository": "https://github.com/muhtarudinsiregar/holidays-cli.git",

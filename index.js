@@ -8,6 +8,7 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 const inquirer = require('inquirer');
 const Table = require('cli-table');
+const colors = require('colors');
 
 const listYears     = "http://www.liburnasional.com/";
 
@@ -61,6 +62,6 @@ axios.get(listYears).then(res => {
             table.push([x.title, x.day, x.date]);
         });
 
-        console.log(table.toString());
+        console.log(colors.cyan(table.toString()));
     });
 });
