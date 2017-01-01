@@ -7,6 +7,7 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
 const inquirer = require('inquirer');
+const Table = require('cli-table');
 
 const listYears     = "http://www.liburnasional.com/";
 
@@ -51,6 +52,15 @@ axios.get(listYears).then(res => {
 
         return holidays;
     }).then(holidays => {
-        console.log(holidays);
+        var table = new Table({
+             head: ['Acara', 'Hari', 'Tanggal']
+        });
+
+        // push value to table
+        holidays.forEach(x=> {
+            table.push([x.title, x.day, x.date]);
+        });
+
+        console.log(table.toString());
     });
 });
