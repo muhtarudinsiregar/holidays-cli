@@ -21,7 +21,7 @@ describe('result crawling', function() {
         });
     });
 
-    it('should return "Minggu", "1 Januari 2013","Tahun Baru Masehi"', function(done) {
+    it('should return "Minggu", "1 Januari 2013","Tahun Baru Masehi"', function() {
         var holidays = [];
 
         return axios.get("http://www.liburnasional.com/kalender-2017/").then(res => {
