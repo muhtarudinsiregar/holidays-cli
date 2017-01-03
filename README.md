@@ -1,6 +1,8 @@
-## Holidays-cli [![devDependency Status](https://david-dm.org/muhtarudinsiregar/holidays-cli.svg)](https://david-dm.org/muhtarudinsiregar/holidays-cli)
+## Holidays-cli 
+ [![devDependency Status](https://david-dm.org/muhtarudinsiregar/holidays-cli.svg)](https://david-dm.org/muhtarudinsiregar/holidays-cli)
+ [![Build Status](https://travis-ci.org/muhtarudinsiregar/holidays-cli.svg?branch=master)](https://travis-ci.org/muhtarudinsiregar/holidays-cli)
 
-check holidays from your cli
+check holidays from cli
 
 ## Usage
 ```
