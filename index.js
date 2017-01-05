@@ -10,20 +10,19 @@ const inquirer = require('inquirer');
 const Table = require('cli-table');
 const colors = require('colors');
 
-const listYears     = "http://www.liburnasional.com/";
+const baseUrl     = "http://www.liburnasional.com/";
 
 var holidays = [];
 
-axios.get(listYears).then(res => {
-    var $ = cheerio.load(res.data);
-    var root = $('.dropdown-menu').eq(0).children().children();
+axios.get(baseUrl).then(response => {
+    var $ = cheerio.load(response.data);
+    var sources = $('.dropdown-menu').eq(0).children().children();
     var years = [];
 
-    root.each(function(x, y) {
+    sources.each(function(x, y) {
         years.push({name: y.children[0].data, link: y.attribs.href});
     });
 
-    // return selected
     // value : "Liburan Nasional 2012"
     return inquirer.prompt([{
         type    : "list",
@@ -32,17 +31,18 @@ axios.get(listYears).then(res => {
         choices : years
     }]);
 }).then(answer => {
-    // get last word from answer/year
-    // return : 2013
+    // get year from answer
+
     var year = answer.years.split(" ");
     return year[year.length - 1];
 }).then(year => {
-    let url   = "http://www.liburnasional.com/kalender-";
-    url         = url+year+"/";
+    let baseUrl   = "http://www.liburnasional.com/kalender-";
+    let url         = baseUrl+year+"/";
 
     // get data u need
     axios.get(url).then(res => {
         var $ = cheerio.load(res.data);
+
         $('.libnas-calendar-holiday-title').each(function(x, y) {
             holidays.push({
                 day     : y.children[1].children[0].data,
