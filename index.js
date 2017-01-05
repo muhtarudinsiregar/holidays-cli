@@ -12,8 +12,6 @@ const colors = require('colors');
 
 const baseUrl     = "http://www.liburnasional.com/";
 
-var holidays = [];
-
 axios.get(baseUrl).then(response => {
     var $ = cheerio.load(response.data);
     var sources = $('.dropdown-menu').eq(0).children().children();
@@ -42,6 +40,7 @@ axios.get(baseUrl).then(response => {
     // get data u need
     axios.get(url).then(res => {
         var $ = cheerio.load(res.data);
+        var holidays = [];
 
         $('.libnas-calendar-holiday-title').each(function(x, y) {
             holidays.push({
