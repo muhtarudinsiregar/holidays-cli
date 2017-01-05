@@ -1,6 +1,7 @@
 ## Holidays-cli 
- [![devDependency Status](https://david-dm.org/muhtarudinsiregar/holidays-cli.svg)](https://david-dm.org/muhtarudinsiregar/holidays-cli)
  [![Build Status](https://travis-ci.org/muhtarudinsiregar/holidays-cli.svg?branch=master)](https://travis-ci.org/muhtarudinsiregar/holidays-cli)
+ [![Code Climate](https://codeclimate.com/github/muhtarudinsiregar/holidays-cli/badges/gpa.svg)](https://codeclimate.com/github/muhtarudinsiregar/holidays-cli)
+ [![devDependency Status](https://david-dm.org/muhtarudinsiregar/holidays-cli.svg)](https://david-dm.org/muhtarudinsiregar/holidays-cli)
 
 check holidays from cli
 
