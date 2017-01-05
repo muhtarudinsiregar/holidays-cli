@@ -36,8 +36,8 @@ axios.get(baseUrl).then(response => {
     var year = answer.years.split(" ");
     return year[year.length - 1];
 }).then(year => {
-    let baseUrl   = "http://www.liburnasional.com/kalender-";
-    let url         = baseUrl+year+"/";
+    let subUrl   = "http://www.liburnasional.com/kalender-";
+    let url         = subUrl+year+"/";
 
     // get data u need
     axios.get(url).then(res => {
@@ -54,12 +54,12 @@ axios.get(baseUrl).then(response => {
         return holidays;
     }).then(holidays => {
         var table = new Table({
-             head: ['Acara', 'Hari', 'Tanggal']
+             head: ['Tanggal', 'Hari', 'Acara']
         });
 
         // push value to table
         holidays.forEach(x=> {
-            table.push([x.title, x.day, x.date]);
+            table.push([x.date, x.day, x.title]);
         });
 
         console.log(colors.cyan(table.toString()));
