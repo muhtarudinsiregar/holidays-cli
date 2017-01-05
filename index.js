@@ -46,7 +46,7 @@ axios.get(baseUrl).then(response => {
             holidays.push({
                 day     : y.children[1].children[0].data,
                 date    : y.children[2].children[0].data,
-                title   : y.children[0].children[0].children[0].children[0].data,
+                title   : y.children[0].children[0].children[0].children[0].data
             });
         });
 
