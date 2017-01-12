@@ -1,16 +1,16 @@
 #!/usr/bin/env node
-/*jslint node: true */
-/*jshint esversion: 6 */
+
+/*eslint-env node*/
+/* eslint-disable no-console */
 
 'use strict';
-
 const axios = require('axios');
 const cheerio = require('cheerio');
 const inquirer = require('inquirer');
 const Table = require('cli-table');
 const colors = require('colors');
 
-const baseUrl     = "http://www.liburnasional.com/";
+const baseUrl     = 'http://www.liburnasional.com/';
 
 axios.get(baseUrl).then(response => {
     var $ = cheerio.load(response.data);
@@ -21,23 +21,23 @@ axios.get(baseUrl).then(response => {
         years.push({name: y.children[0].data, link: y.attribs.href});
     });
 
-    // value : "Liburan Nasional 2012"
+  // value : "Liburan Nasional 2012"
     return inquirer.prompt([{
-        type    : "list",
-        name    : "years",
-        message : "Pilih Tahun: ",
+        type    : 'list',
+        name    : 'years',
+        message : 'Pilih Tahun: ',
         choices : years
     }]);
 }).then(answer => {
-    // get year from answer
+  // get year from answer
 
-    var year = answer.years.split(" ");
+    var year = answer.years.split(' ');
     return year[year.length - 1];
 }).then(year => {
-    let subUrl   = "http://www.liburnasional.com/kalender-";
-    let url         = subUrl+year+"/";
+    let subUrl   = 'http://www.liburnasional.com/kalender-';
+    let url         = subUrl+year+'/';
 
-    // get data u need
+  // get data u need
     axios.get(url).then(res => {
         var $ = cheerio.load(res.data);
         var holidays = [];
@@ -53,10 +53,10 @@ axios.get(baseUrl).then(response => {
         return holidays;
     }).then(holidays => {
         var table = new Table({
-             head: ['Tanggal', 'Hari', 'Acara']
+            head: ['Tanggal', 'Hari', 'Acara']
         });
 
-        // push value to table
+    // push value to table
         holidays.forEach(x=> {
             table.push([x.date, x.day, x.title]);
         });
