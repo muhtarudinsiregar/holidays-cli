@@ -5,7 +5,7 @@
  [![npm version](https://badge.fury.io/js/holidays-cli.svg)](https://badge.fury.io/js/holidays-cli)
  [![devDependency Status](https://david-dm.org/muhtarudinsiregar/holidays-cli.svg)](https://david-dm.org/muhtarudinsiregar/holidays-cli)
 
-check holidays from cli
+check indonesian holidays from cli
 
 ## Usage
 ```
