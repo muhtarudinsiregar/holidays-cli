@@ -28,7 +28,10 @@ axios.get(baseUrl).then(response => {
         message : 'Pilih Tahun: ',
         choices : years
     }]);
-}).then(answer => {
+}).catch(() => {
+    console.error(colors.red('\n Please check your internet connection.\n'));
+})
+.then(answer => {
   // get year from answer
 
     var year = answer.years.split(' ');
